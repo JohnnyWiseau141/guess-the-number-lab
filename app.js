@@ -7,11 +7,17 @@ const game = {
   previousNum: [],
   getGuesses: function() {
     prompt(`Enter a guess between ${game.smallestNum} and ${game.biggestNum}:`)
-  },
+    while (getGuesses => 1 && getGuesses <= 100 ) {
+      console.log('i guess it works'); {
+        break;
+      }
+      }
+    }
+  ,
   play: function() {
     this.secretNum = Math.floor(Math.random() * 
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
-      game.getGuesses()
+    game.getGuesses()
   },
 
   //pop up that prompts user to enter the number
