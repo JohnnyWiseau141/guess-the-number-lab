@@ -46,3 +46,5 @@ const game = {
   //pop up that prompts user to enter the number
   
 }
+
+game.play()
