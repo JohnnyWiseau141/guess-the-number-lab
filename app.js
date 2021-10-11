@@ -23,7 +23,9 @@ const game = {
         
         this.getGuesses()
       } else if (yourGuess !== Number) {
+        game.previousNum.pop()
         alert('You did not use a number')
+        this.getGuesses()
       } 
       
       else {
