@@ -7,23 +7,29 @@ const game = {
   previousNum: [],
   getGuesses: function() {
     
-  let yourGuess = prompt(`Enter a guess between ${game.smallestNum} and ${game.biggestNum}:`)
-
+  let yourGuess = prompt(`Enter a guess between ${game.smallestNum} and ${game.biggestNum} (your previous guesses -- ${game.previousNum}):`)
+  game.previousNum.push(yourGuess)
   yourGuess = parseInt(yourGuess, 10)
 
 
     if (yourGuess === game.secretNum) {
-      alert('i guess it works')
+      alert(`i guess you are quite a smart person in the works. You guessed ${game.previousNum.length} times`)
       } else if (yourGuess < this.secretNum) {
-        console.log('Too low try again')
+        alert(`Too low try again. Your previous guesses: ${game.previousNum}`)
+        
+        this.getGuesses()
       } else if (yourGuess > this.secretNum) {
-        console.log('Too high try again')
+        alert(`Too high try again. Your previous guesses: ${game.previousNum}`)
+        
+        this.getGuesses()
       } else if (yourGuess !== Number) {
-        console.log('You did not use a number')
+        alert('You did not use a number')
       } 
       
       else {
         return yourGuess
+        
+        
       }
       
       
